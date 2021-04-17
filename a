@@ -1,0 +1,30 @@
+import os
+
+def inpu(inp, tru, image):
+    print(inp)
+    os.system(image)
+
+    if tru.lower() == "да":
+        return input().lower() == "да" or input().lower() == "+" or input().lower() == "конечно"\
+               or input().lower() == "естественно" or input().lower() == "es" or input().lower() == "es, of course"
+
+    return input().lower() == tru.lower()
+
+print("Кто ты?")
+
+if inpu("Вы умеете разговаривать?", "Да", ""):
+    if inpu("Что вы видете?", "morning", "Morning.png"):
+        if inpu("Что бы вы сделали, если бы увидели умирающего животное?", "Да", ""):
+            print("Вы 100% человек")
+        else:
+            print("Вы нелюдь")
+    else:
+        print("Вы робот")
+else:
+    if inpu("Вы умеете писать?", "Да", ""):
+        print("Вы немой")
+    else:
+        if inpu("Вы любите есть с пола?", "Да", ""):
+            print("Вы животное")
+        else:
+            print("Вы ребёнок")
